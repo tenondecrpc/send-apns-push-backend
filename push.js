@@ -5,6 +5,7 @@ const http2 = require('http2');
 const fs = require('fs');
     
 async function sendPush(req, res) {
+    const { body: { deviceId } } = req;
     /*
     Read p8 file. Assumes p8 file to be in same directory
     */
@@ -30,7 +31,7 @@ async function sendPush(req, res) {
     */
 
     host = process.env.APNS_HOST_PROD;
-    path = '/3/device/' + process.env.DEVICE_TOKEN;
+    path = '/3/device/' + deviceId
 
     const client = http2.connect(host);
 
