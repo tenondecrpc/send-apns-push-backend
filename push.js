@@ -29,7 +29,7 @@ async function sendPush(req, res) {
     Use 'https://api.push.apple.com' for production build
     */
 
-    host = 'https://api.sandbox.push.apple.com';
+    host = process.env.APNS_HOST_PROD;
     path = '/3/device/' + process.env.DEVICE_TOKEN;
 
     const client = http2.connect(host);

@@ -1,8 +1,10 @@
 PORT=3000
-P8_NAME=
-P8_KEY_ID=
-TEAM_ID=
-DEVICE_TOKEN=
-PUSH_TITLE=
-PUSH_BODY=
-BUNDLE_ID=
+P8_NAME=filename
+P8_KEY_ID=XXXXXXXXXX
+TEAM_ID=XXXXXXXXXX
+APNS_HOST_DEV=https://api.sandbox.push.apple.com
+APNS_HOST_PROD=https://api.push.apple.com
+DEVICE_TOKEN=xxxxxxxxxxxxxxxxx
+PUSH_TITLE=Welcome
+PUSH_BODY=Thank you for visiting our website
+BUNDLE_ID=com.xxxxxx.xxxxx
