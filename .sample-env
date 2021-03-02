@@ -4,6 +4,4 @@ P8_KEY_ID=XXXXXXXXXX
 TEAM_ID=XXXXXXXXXX
 APNS_HOST_DEV=https://api.sandbox.push.apple.com
 APNS_HOST_PROD=https://api.push.apple.com
-PUSH_TITLE=Welcome
-PUSH_BODY=Thank you for visiting our website
 BUNDLE_ID=com.xxxxxx.xxxxx

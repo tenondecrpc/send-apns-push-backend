@@ -5,7 +5,7 @@ const http2 = require('http2');
 const fs = require('fs');
     
 async function sendPush(req, res) {
-    const { body: { deviceId } } = req;
+    const { body: { deviceId, title, message } } = req;
     /*
     Read p8 file. Assumes p8 file to be in same directory
     */
@@ -40,8 +40,8 @@ async function sendPush(req, res) {
     body = {
         "aps": {
             "alert": {
-                "title": process.env.PUSH_TITLE,
-                "body": process.env.PUSH_BODY,
+                "title": title,
+                "body": message,
             },
             "sound": "default",
             // "topic": "topic",
