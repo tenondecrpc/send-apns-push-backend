@@ -5,7 +5,7 @@ const http2 = require('http2');
 const fs = require('fs');
     
 async function sendPush(req, res) {
-    const { body: { deviceId, title, message } } = req;
+    const { body: { deviceId, title, message, link } } = req;
     /*
     Read p8 file. Assumes p8 file to be in same directory
     */
@@ -30,7 +30,7 @@ async function sendPush(req, res) {
     Use 'https://api.push.apple.com' for production build
     */
 
-    host = process.env.APNS_HOST_PROD;
+    host = process.env.APNS_HOST_DEV;
     path = '/3/device/' + deviceId
 
     const client = http2.connect(host);
@@ -47,8 +47,9 @@ async function sendPush(req, res) {
             // "topic": "topic",
             // "priority": 10,
             // "pushType": "alert",
-            // "payload": {'messageFrom': 'Cristian'}
-        }
+            "payload": { 'name': 'Cristian' },
+        },
+        "link": link
     }
 
     headers = {
